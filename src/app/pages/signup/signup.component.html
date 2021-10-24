@@ -1,0 +1,78 @@
+<div class="main-section">
+
+  <div class="main-container-box">
+
+    <div class="form-container">
+      <h1 class="title">Sign up</h1>
+
+      <form #signupForm="ngForm" (ngSubmit)="onSignup(signupForm)">
+
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <label>
+              <input
+                [ngModel]="user.name"
+                class="input"
+                minlength="3"
+                name="name"
+                placeholder="Ex: John Doe"
+                required
+                type="text">
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <label>
+              <input
+                [ngModel]="user.email"
+                class="input"
+                email
+                minlength="5"
+                name="email"
+                placeholder="Ex: johndoe@email.com"
+                required
+                type="email">
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <label>
+              <input
+                [ngModel]="password"
+                class="input"
+                minlength="8"
+                name="password"
+                placeholder="enter your password"
+                required
+                type="password">
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button [disabled]="!signupForm.valid" class="button is-primary has-text-white is-fullwidth"
+                    style="margin-top: 28px"
+                    type="submit">Sign up
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="alternate-bar">
+      <h2>Already have an account?</h2>
+      <button class="button" routerLink="/login">Log in</button>
+    </div>
+
+  </div>
+
+</div>
